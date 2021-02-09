@@ -1,0 +1,45 @@
+Juan Carlos
+Martinez Garcia
+43
+25351286
+9
+Martin Andres
+Lopez Obrador
+30
+33657869
+8
+Gonzalo Joaquin
+Gonzalez Escurra
+23
+40222175
+7
+Maria Viviana
+Lopez Miranda
+18
+44213487
+7
+Juan Martin
+Del Potro
+34
+35681243
+10
+Emiliano Ernesto
+Rossi Guevara
+19
+41385769
+8
+Joaquin Andres
+Lopez Guernica
+27
+32678923
+6
+Nelson Augusto
+Rodriguez Zapatero
+33
+28254687
+2
+Julian Agustin
+Rizzo Marmol
+23
+38957672
+8

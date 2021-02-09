@@ -1,0 +1,644 @@
+0
+0
+Amaya Lotch
+Sara Abigail
+21
+39887354
+5
+0
+0
+Ramirez Del Prado
+Diego Armando
+24
+37659823
+10
+0
+0
+Ruiz Palacios
+Juan Agustin
+20
+40387229
+6
+0
+0
+Virrey del Pino
+Carlos Augusto
+18
+42183237
+8
+0
+0
+Zelaya Torres
+Martin Eneas
+19
+41651792
+4
+0
+1
+Benitez Moreno
+Nadia Elizabeth
+18
+43592657
+7
+0
+1
+Del Potro
+Juan Martin
+34
+35681243
+10
+0
+1
+Lopez Guernica
+Joaquin Andres
+27
+32678923
+6
+0
+1
+Lopez Miranda
+Maria Viviana
+18
+44213487
+7
+0
+2
+Britos Guevara
+Juan Agustin
+18
+44319762
+8
+0
+2
+Estevez Di Maria
+Maria Emilia
+18
+43985621
+2
+0
+2
+Garcia Machin
+David Lisandro
+21
+39712234
+9
+0
+2
+Iniesta Jerez
+Juan Pablo
+24
+37235729
+4
+0
+2
+Krasnov
+Danko Ivan
+20
+99317643
+10
+0
+2
+Makarenko
+Ana Maria
+19
+43021607
+9
+0
+2
+Rodriguez Pedrosa
+Mirco
+19
+43112968
+7
+0
+2
+Saleme Caceres
+Maria Micaela
+19
+42625384
+3
+1
+0
+Garcia Rex
+Delfina Micaela
+18
+44521643
+7
+1
+0
+Hernandez
+Esteban David
+20
+42008921
+3
+1
+0
+Mafioli
+Juan Cruz
+23
+39886504
+1
+1
+0
+Ramirez Mercier
+Maria Soledad
+20
+42365019
+2
+1
+0
+Rodriguez Dameno
+Maria Juanita
+19
+42997351
+6
+1
+0
+Rossi Guevara
+Emiliano Ernesto
+19
+41385769
+8
+1
+1
+Bravo
+Maria Cristina
+36
+36578231
+7
+1
+1
+Gonzalez
+Viviana Ernestina
+23
+38997212
+5
+1
+1
+Hamilton
+Walter Edward
+21
+99354762
+8
+1
+1
+Martinez Garcia
+Juan Carlos
+43
+25351286
+9
+1
+1
+Suarez
+Pamela Daiana
+22
+39012341
+6
+1
+2
+Gonzalez Escurra
+Gonzalo Joaquin
+23
+40222175
+7
+1
+2
+Martinez Garcia
+Luis Eduardo
+27
+38012457
+3
+1
+2
+Ordo¤ez Acu¤a
+Esteban Agustin
+19
+43017395
+8
+1
+2
+Rodriguez Zapatero
+Nelson Augusto
+33
+28254687
+2
+1
+2
+Sanz Calderon
+Maria Silvina
+26
+38254667
+6
+2
+0
+Arce
+Ezequiel
+22
+40321657
+6
+2
+0
+Garcia Echeverry
+Susana Filomena
+53
+16396742
+8
+2
+0
+Martin Tarnogol
+Maria Estela
+25
+37668543
+6
+2
+0
+Sanchez Campoy
+Luis Maria
+34
+33289612
+9
+2
+0
+Trovit De La Fuente
+Maria Sereia
+19
+43027522
+2
+2
+1
+Estevez Barriga
+Maria Roberta
+24
+38381265
+4
+2
+1
+Larsen Decotto
+Martin Exequiel
+20
+42657834
+8
+2
+1
+Lopez Obrador
+Martin Andres
+30
+33657869
+8
+2
+1
+Rubinstein
+Luana Micaela
+19
+43689331
+10
+2
+1
+Saenz
+Alberto
+57
+19124813
+7
+2
+1
+Sanz Ordoqui
+Juan Pedro
+27
+38021331
+7
+2
+2
+Basilotta
+Natalia Lorena
+29
+35286971
+5
+2
+2
+Bastianini
+Franco
+23
+38986579
+8
+2
+2
+Di Giacomini
+Stefano
+24
+99881213
+9
+2
+2
+Ritondo
+Alfonso Daniel
+39
+28995672
+6
+2
+2
+Rodriguez Saleme
+Carlos Maria
+34
+34219712
+8
+2
+2
+Simoni Struch
+Gonzalo
+21
+41296752
+2
+3
+0
+De Paoli
+Maria Del Carmen
+42
+26384619
+5
+3
+0
+Larrondo Miguez
+Maria Marcela
+39
+28371212
+6
+3
+0
+Mercado
+Maria Mercedes
+19
+43998734
+7
+3
+0
+Pantanali
+Juan Angel
+20
+42861112
+7
+3
+1
+2
+Peralta Ramos
+0
+0
+7
+3
+1
+Fascina
+Maria de los Angeles
+23
+41052313
+6
+3
+1
+Gonzalez Bravo
+Ivana Ayelen
+22
+42113219
+9
+3
+1
+Perez Sancio
+Luis Enrique
+38
+30317515
+5
+3
+2
+Azcarate
+Noelia Paola
+25
+36894657
+7
+3
+2
+Benelli
+Luciano Stefano
+20
+99249512
+9
+3
+2
+Gastaldi
+Bruno Mart¡n
+21
+41937655
+4
+3
+2
+Gimenez Garcia
+Daniela Sereia
+22
+40317321
+7
+3
+2
+Martelletti
+juan Ernesto
+24
+37989573
+7
+4
+0
+Barricarte
+Maria Josefina
+19
+43671134
+7
+4
+0
+Dieguez Suarez
+Benicio
+21
+41225867
+8
+4
+0
+Estebanez
+Daiana Mery
+19
+43027884
+3
+4
+0
+Ruiz
+Micaela Azul
+21
+40013256
+3
+4
+1
+Cabanes
+Juan Ignacio
+23
+41117653
+7
+4
+1
+Caviglia
+Emiliano
+20
+42745573
+7
+4
+1
+Estevez Di Meglio
+Anabella Maria
+19
+44001132
+9
+4
+1
+Fernandez Miccio
+Luana Elizabeth
+20
+42335612
+5
+4
+1
+Villordo
+Luis Esteban
+20
+42886139
+2
+4
+2
+Abengoa
+Martin Luciano
+21
+42112015
+8
+4
+2
+Brucaert
+Maximiliano
+23
+39772113
+5
+4
+2
+Dieguez Marquez
+Maria Anabella
+24
+38437992
+8
+4
+2
+Zarlenga
+Adrian Agustin
+25
+38011334
+6
+5
+0
+Di Giano Aventin
+Axel Emiliano
+21
+41998613
+7
+5
+0
+Lopez Pinto
+Viviana Andrea
+43
+25265312
+3
+5
+0
+Mastromarino
+Nadia Ayelen
+21
+42217888
+9
+5
+0
+Palumbo
+Astrid
+18
+44844119
+7
+5
+0
+Rosales Cano
+Brunella Ail‚n
+18
+44696322
+5
+5
+0
+Silenci
+Barbara
+25
+38015554
+4
+5
+1
+Cardenas Gomez
+Maria Valentina
+25
+38665111
+5
+5
+1
+Fernandez Bacci
+Ariel Raul
+22
+40376113
+7
+5
+1
+Gomez Bustillo
+Maria Emiliana
+21
+41378652
+3
+5
+1
+Gonzalez Maggi
+Carlo Mario
+22
+40295661
+8
+5
+1
+Palumbo Garnica
+Maria de los Angeles
+20
+42331565
+8
+5
+1
+Volterra Guerin
+Lucio Esteban
+20
+42544712
+4
+5
+2
+Antunez Di Maria
+Joaquina Micaela
+25
+38976442
+7
+5
+2
+Pezzatti
+Augusto Nicolas
+23
+39012334
+8
+5
+2
+Velardez Castro
+Marianella
+21
+41532359
+6
+5
+2
+Villordo Nieto
+Maria Ayelen
+20
+42799354
+8

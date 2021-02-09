@@ -1,0 +1,20 @@
+			Criterio 01	Criterio 02	Criterio 03	Criterio 04	Criterio 05	Criterio 06	Preferencia
+Número	Marca	Modelo	Velocidad Máxima	Consumo en ciudad	Consumo A 120 k/h	Caballos de fuerza	Espacio	Precio	
+Alternativa 01	Peugeot	505GR	173	11.4	10	10	7.88	49500	p
+Alternativa 02	Opel	Record200LS	176	12.3	10.48	11	7.96	46700	p
+Alternativa 03	Citroen	VisaSuper"E"	142	8.2	7.3	5	5.65	32100	p
+Alternativa 04	VW	Golf1300GLS	148	10.5	9.61	7	6.15	39150	p
+Alternativa 05	Citroen	CX2400Pallas	178	14.5	11.05	13	8.06	64700	p
+Alternativa 06	Mercedes	230	180	13.6	10.4	13	8.47	75700	p
+Alternativa 07	BMW	520	182	12.7	12.26	11	7.81	68593	p
+Alternativa 08	Volvo	244DL	145	14.3	12.95	11	8.38	55000	p
+Alternativa 09	Peugeot	104ZS	161	8.6	8.42	7	5.11	35200	p
+Alternativa 10	Citroen	Dyne	117	7.2	6.75	3	5.81	24800	
+
+	g+		190	7	6	13	9	20000	
+	g-		110	15	13	3	5	80000
+	alfa		5	4	4	5	4	5
+	s		0	0	0	0	0	0
+
+delta	0.01							
+e	0.009							

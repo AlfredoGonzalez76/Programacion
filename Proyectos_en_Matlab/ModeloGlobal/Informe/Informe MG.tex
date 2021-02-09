@@ -1,0 +1,320 @@
+\documentclass[12pt, spanish]{amsart}
+
+%\documentclass[12pt,spanish]{amsbook}
+\usepackage{amsfonts,amsmath,amsthm,amsxtra, amssymb}
+\usepackage{multicol}
+\usepackage{graphics}
+\usepackage{epic}
+\usepackage{fancyhdr}
+\usepackage[usenames]{color}
+\usepackage[spanish]{babel}
+\usepackage{epsfig}
+\usepackage[latin1]{inputenc}
+\usepackage{times}
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage{titlesec}
+\usepackage{enumerate}
+\usepackage{stackrel}
+
+\setcounter{secnumdepth}{0} % así quito la numeración de las secciones
+
+\newtheorem{teorema}{Teorema}[section]
+\newtheorem{proposicion}[teorema]{Proposici\'on}
+\newtheorem{corolario}[teorema]{Corolario}
+\newtheorem{lema}[teorema]{Lema}
+\newtheorem{teo}{Teorema}
+
+\theoremstyle{definition}
+
+\newtheorem{definicion}{Definici\'on}[section]
+\newtheorem{ejemplo}{Ejemplo}[section]
+\newtheorem{problema}{Problema}[section]
+\newtheorem{ejercicio}{Ejercicio}[section]
+\newtheorem{ejerciciof}{}[section]
+\newtheorem{ejem}{Ejemplo}
+\newtheorem{defi}{Definici\'on}
+\newtheorem*{ejerc}{Ejercicio}
+\newtheorem{obs}{Observaci\'on}
+\newtheorem*{notacion}{Notaci\'on}
+
+
+\theoremstyle{remark}
+\newtheorem{observacion}{Observaci\'on}[section]
+%\newtheorem*{obs}{Observaci\'on}
+\newtheorem{nota}{Nota}[section]
+
+
+\renewcommand{\abstractname}{Resumen}
+\renewcommand{\partname }{Parte }
+\renewcommand{\indexname}{Indice }
+\renewcommand{\figurename }{Figura }
+\renewcommand{\tablename }{Tabla }
+\renewcommand{\proofname}{Demostraci\'on}
+\renewcommand{\appendixname }{Ap\'endice }
+\renewcommand{\contentsname }{Contenidos }
+\addto\captionsspanish{\renewcommand{\chaptername }{Lectura }}
+\renewcommand{\bibname }{Bibliografía }
+
+
+\tolerance=10000
+\renewcommand{\baselinestretch}{1.3}
+\newcommand{\ben}{\begin{enumerate}}
+\newcommand{\een}{\end{enumerate}}
+\newcommand{\dis}{\displaystyle}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\N}{\mathbb N}
+
+\oddsidemargin -0.25cm \evensidemargin -.35cm \topmargin -.5cm \textheight 22.5cm
+\textwidth 17.2cm
+
+\newenvironment{sol}{{\underline{\emph{Solución:}}}}{\hfill\rule{2mm}{2mm}}
+
+\DeclareGraphicsExtensions{.eps,.bmp,.wmf}
+
+
+
+\title{Artes de Captura: \\ \ \\ \ Estimación de parámetros de una función de retención}
+\author{Alfredo H. Gonzalez}
+
+
+
+\begin{document}
+\sloppy
+
+%%%%%%%%%%%% AQUI COMIENZA LA PÁGINA DE PRESENTACION %%%%%%%%%%%%%%%%
+
+%\thispagestyle{empty}
+
+%\begin{comment}
+\pagenumbering{gobble}
+
+\begin{center}
+\textbf{\LARGE{Informe técnico}}
+\vskip2cm
+
+\vspace{2cm}
+
+\textbf{\LARGE{Modelo Global de Biomasa: \\ \ \\ \ Diagnóstico, Simulación y Proyección }}
+
+\vspace{2cm}
+
+\begin{figure}[!htbp]
+\centerline{\mbox{\includegraphics[scale=0.1,%
+viewport=5 0 900 720,clip]{Logo_Inidep.pdf}}}
+\end{figure}
+
+
+\textbf{\LARGE{INIDEP \\ \ \\ Mar del Plata}}
+
+\vskip3cm
+\textbf{\Large{Alfredo H. Gonzalez}}
+
+\end{center}
+
+%\end{comment}
+
+%%%%%%%%%%%% AQUI TERMINA LA PÁGINA DE PRESENTACION %%%%%%%%%%%%%%%%
+
+\newpage
+
+\pagenumbering{arabic}
+
+%%%%%%%%%%%% Esto define los headers %%%%%%%%%%%%%%%%
+
+\pagestyle{fancy}
+\fancyhead{} % clear all header fields
+\fancyhead[L]{%right
+   \includegraphics[height=0.25in]{Logo_Inidep.pdf}
+}
+\fontsize{8pt}{8pt}\selectfont
+%\fancyfoot{}
+\chead{INSTITUTO NACIONAL DE INVESTIGACIÓN Y DESARROLLO PESQUERO}
+\cfoot{Modelo Global de Biomasa: Diagnóstico, Simulación y Proyección}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt} % grosor de la línea de la cabecera
+\addtolength{\headheight}{5mm}       % espacio para la raya en la cabecera
+\renewcommand{\footrulewidth}{0.4pt} % grosor de la línea del pie
+\addtolength{\footskip}{10mm}        % espacio para la raya del pie
+
+%%%%%%%%%%
+
+%\maketitle
+%\vspace*{0.01cm}
+\fontsize{14pt}{14pt}\selectfont
+\begin{center}
+Modelo Global de Biomasa: Diagnóstico, Simulación y Proyección\\ \ \\
+Alfredo H. Gonzalez
+\end{center}
+\vspace{0.5cm}
+\rule{\textwidth}{0.4pt}
+\fontsize{11pt}{11pt}\selectfont
+
+
+\section{Introducción}
+
+El siguiente trabajo pretende resumir todos los pasos de una Evaluación de un Recurso Pesquero aplicando un modelo sencillo. Para ello se implementará un modelo global de biomasa para una población de peces. 
+Dicho modelo consta de un único parámetro, el cual será estimado por el método de Máxima Verosimilitud (MV). Los estimadores de máxima verosimilitud poseen la propiedad de tener distribución asintóticamente normal. Con base en este hecho, se calcula la matriz de covarianza del estimador, necesaria para generar réplicas del parámetro con la misma distribución de probabilidades. Haciendo uso de tales ''réplicas'' del parámetro, se calculan y grafican  las curvas de evolución de posibles biomasas. Se realizan por último proyecciones, en este caso de un año, con un objetivo propuesto, considerando diferentes valores de captura posibles y analizando en cada caso el riesgo asumido para tal valor.
+Todos los pasos de la modelización han sido implementados en Matlab R2013a, junto con algunas explicaciones teóricas.
+
+\newpage
+\section{Planteo del Problema}
+Se plantea el modelo de dinámica de biomasa
+$$ B_{t+1} = B_t + r B_t - C_t \; , \qquad \text{donde} \quad  \forall t: \, B_t \geq 0 \quad \text{y} \quad r>0.$$
+
+Dada una biomasa inicial $B_0 > 0$ se calcula, vía el modelo, un vector de biomasas que tendrá una componente más que el vector de capturas, pues la biomasa del último tiempo y el modelo permiten avanzar un año más.
+El correspondiente código en Matlab es:
+
+\begin{figure}[!htbp]
+\centerline{\mbox{\includegraphics[scale=0.85,%
+viewport=5 540 600 725,clip]{ModeloG.pdf}}}
+\end{figure}
+
+
+
+
+\section{Estimación de Parámetros}
+
+\begin{itemize}
+\item Este modelo incluye la estimación de su único parámetro: $r$.
+
+\item Las biomasas estimadas son biomasas absolutas. Sólo podrán estimarse, basados en datos, si se cuenta con al menos un índice de abundancia para estimar el parámetro $r$.
+\end{itemize}
+
+\vspace{0.25cm}
+
+\underline{Indice de Abundancia:}
+\begin{equation} \label{CPUEm:CPUEm}
+\overline{CPUE}_t = q \overline{B}_t + \epsilon_t \;, \quad \text{con } \, \epsilon_t\sim \mathcal{N}(0,\sigma_t^2)
+\end{equation}
+
+\vspace{0.25cm}
+
+Aquí $\overline{CPUE}_t$ es la ${CPUE}_t$ (captura por unidad de esfuerzo) \emph{media}. La biomasa media $\overline{B}_t$ se calcula:
+$$\overline{B}_t = \frac{B_t + B_{t+1}}{2}\; , \qquad \text{(depende de $r$)}.$$ 
+
+Dado que $\epsilon_t\sim \mathcal{N}(0,\sigma_t^2)$, el estimador de MV de $q$ coincide con el estimador de Mínimos Cuadrados Generalizados, pues habrá que hacer una corrección por heterocedasticidad. Es decir que, dividiendo ambos miembros de (\ref{CPUEm:CPUEm}) por $\sigma_t$ se tiene:
+
+\begin{equation*}
+\frac{\overline{CPUE}_t}{\sigma_t} = q \frac{\overline{B}_t}{\sigma_t} + \frac{\epsilon_t}{\sigma_t} \quad \text{ donde ahora } \frac{\epsilon_t}{\sigma_t} \sim \mathcal{N}(0,1)
+\end{equation*}
+\vspace{0.15cm}
+
+
+
+Puesto que $\overline{B}_t$ depende de $r$, la suma de cuadrados de errores dependerá tanto de $q$ como de $r$, es decir: $S^2(q,r)=\sum_t \left(\frac{\overline{CPUE}_t}{\sigma_t} - q \frac{\overline{B}_t}{\sigma_t}\right)^2$ , lo cual sugiere que se debe hallar $\stackbin[q,r]{}{Min}\, S^2(q,r)$.
+
+
+Para ello, se calculan las derivadas parciales de $S^2$ y se igualan a cero, es decir:
+\begin{equation} \label{DerPar:DerPar} 
+\frac{\partial S^2}{\partial q}=0 \qquad \qquad \frac{\partial S^2}{\partial r}=0 
+\end{equation}
+\vspace{0.15cm}
+
+De la primera de ellas puede despejarse $q$ (que queda en función de $r$):
+\begin{equation}
+q = \frac{\sum_t (\overline{CPUE}_t \overline{B}_t)/\sigma_t^2}{\sum_t \overline{B}^2_t/\sigma_t^2}
+\end{equation}
+
+Haciendo las cuentas (\ref{DerPar:DerPar}) se obtienen dos expresiones que dependen tanto de $r$ como de $q$. Reemplazando la expresión hallada para $q$ en $\frac{\partial S^2}{\partial r}=0$
+
+
+
+
+
+
+Es decir que si se conviene en llamar $S^2(q)= \sum_t \left(\frac{\overline{CPUE}_t}{\sigma_t} - q \frac{\overline{B}_t}{\sigma_t}\right)^2$, entonces el valor estimado $\hat{q}$ del parámetro $q$ será aquel que minimiza la suma de cuadrados anterior.
+
+Para hallar $\stackbin[q]{}{Min}\, S^2(q)$ se procede derivando $S^2$ respecto de $q$ e igualando a cero:
+
+
+
+
+
+Como ya se ha estimado $\hat{q} = \hat{q}(r)$, debería minimizarse $S^2(\hat{q}(r),r)=\sum_t \left(\frac{\overline{CPUE}_t}{\sigma_t} - \hat{q} \frac{\overline{B}_t}{\sigma_t}\right)^2 = S^2(r)$ es decir:
+
+\begin{equation*}
+\stackbin[q,r]{}{Min}\, S^2(q,r) = \stackbin[q,r]{}{Min} \sum_t \left(\frac{\overline{CPUE}_t}{\sigma_t} - q \frac{\overline{B}_t}{\sigma_t}\right)^2 = \stackbin[r]{}{Min} \sum_t \left(\frac{\overline{CPUE}_t}{\sigma_t} - \hat{q} \frac{\overline{B}_t}{\sigma_t}\right)^2 = \stackbin[r]{}{Min} \, S^2(r) 
+\end{equation*}
+
+
+Dado que puede no haber índices de biomasa (en este caso el índice es la CPUE) para todos los tiempos, se le pide al usuario que, al cargar el archivo de datos, coloque un valor negativo cuando no haya datos (no colocar un cero, pues el cero podría representar que no se encontró la especie y no una ausencia de datos).
+
+A continuación se muestra un código en Matlab a minimizar. Se ha definido un vector booleano ''Ind'' que guarda un 1 en aquellas componentes donde el índice $I=\overline{CPUE}_t$ es mayor o igual a cero, y cero en los lugares donde el índice $I=\overline{CPUE}_t$ es negativo.
+
+
+\begin{figure}[!htbp]
+\centerline{\mbox{\includegraphics[scale=0.8,%
+viewport=5 510 600 725,clip]{SumaCuad.pdf}}}
+\end{figure}
+
+La anterior función es llamada del siguiente modo:
+
+\begin{figure}[!htbp]
+\centerline{\mbox{\includegraphics[scale=0.8,%
+viewport=5 525 600 655,clip]{Minimiza.pdf}}}
+\end{figure}
+
+Dado que $\hat{r}$ es el Estimador de Máxima Verosimilitud, tendrá distribución asintótica normal, donde la media será el valor estimado y la varianza del estimador se calcula:
+
+\begin{equation*}
+Var(\hat{r}) = 2 \left[\frac{d^2S^2(\hat{r})}{dr^2}\right]^{-1}.
+\end{equation*}
+
+\newpage
+
+El código que realiza dicho cálculo será:
+
+\begin{figure}[!htbp]
+\centerline{\mbox{\includegraphics[scale=0.85,%
+viewport=5 415 600 515,clip]{Minimiza.pdf}}}
+\end{figure}
+
+
+\section{Simulación}
+
+\begin{figure}[!htbp]
+\centerline{\mbox{\includegraphics[scale=0.85,%
+viewport=5 200 600 400,clip]{Minimiza.pdf}}}
+\end{figure}
+
+
+
+
+
+\section{Estadística}
+
+\begin{figure}[!htbp]
+\centerline{\mbox{\includegraphics[scale=0.85,%
+viewport=5 440 600 720,clip]{Estadistica.pdf}}}
+\end{figure}
+
+Tomo la media, varianza y los percentiles 5 y 95 de las realizaciones simuladas de biomasa.
+
+\newpage
+
+\section{Proyecciones - Riesgo}
+
+\begin{figure}[!htbp]
+\centerline{\mbox{\includegraphics[scale=0.85,%
+viewport=5 335 600 715,clip]{Riesgo.pdf}}}
+\end{figure}
+
+Además de proyectar y graficar, el código anterior guarda en la ''Matriz de Riesgos'' MR de 2 $\times$ (cant+1), para cada captura, el riesgo correspondiente (probabilidad de no cumplir el objetivo propuesto).
+
+Tomando como ejemplo el caso analizado, donde se han calculado los riesgos con 20 capturas diferentes, la matriz MR tomó la forma:
+
+\begin{figure}[!htbp]
+\centerline{\mbox{\includegraphics[scale=0.85,%
+viewport=5 710 600 720,clip]{MR.pdf}}}
+\end{figure}
+\begin{figure}[!htbp]
+\centerline{\mbox{\includegraphics[scale=0.85,%
+viewport=5 455 600 530,clip]{MR2.pdf}}}
+\end{figure}
+
+
+
+\end{document}

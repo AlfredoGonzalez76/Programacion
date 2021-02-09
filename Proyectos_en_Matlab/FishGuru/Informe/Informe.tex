@@ -1,0 +1,499 @@
+\documentclass[a4paper,12pt, spanish]{amsart}
+%\documentclass[12pt,spanish]{amsbook}
+\usepackage{amsfonts,amsmath,amsthm,amsxtra,amssymb}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{epic}
+\usepackage{fancyhdr}
+\usepackage[usenames]{color}
+\usepackage[spanish]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{epsfig}
+\usepackage{times}
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage{titlesec}
+\usepackage{enumerate}
+\usepackage{cite}
+\usepackage{listings}
+\usepackage{afterpage}
+\usepackage{float}
+\usepackage{listings}
+
+
+%%%%% ESTILO Y FUENTE %%%%%
+\usepackage{helvet}
+\usepackage{fourier}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{atbegshi}% http://ctan.org/pkg/atbegshi
+%\AtBeginDocument{\AtBeginShipoutNext{\AtBeginShipoutDiscard}} % ELIMINA PAGINA EN BLANCO PORTADA
+
+\renewcommand{\familydefault}{\sfdefault}
+\setcounter{secnumdepth}{0} % así quito la numeración de las secciones
+
+\newtheorem{teorema}{Teorema}[section]
+\newtheorem{proposicion}[teorema]{Proposici\'on}
+\newtheorem{corolario}[teorema]{Corolario}
+\newtheorem{lema}[teorema]{Lema}
+\newtheorem{teo}{Teorema}
+
+\theoremstyle{definition}
+
+\newtheorem{definicion}{Definici\'on}
+\newtheorem{ejemplo}{Ejemplo}[section]
+\newtheorem{problema}{Problema}[section]
+\newtheorem{ejercicio}{Ejercicio}[section]
+\newtheorem{ejerciciof}{}[section]
+\newtheorem{ejem}{Ejemplo}
+\newtheorem{defi}{Definici\'on}
+\newtheorem*{ejerc}{Ejercicio}
+\newtheorem{obs}{Observaci\'on}
+\newtheorem*{notacion}{Notaci\'on}
+
+
+\theoremstyle{remark}
+\newtheorem{observacion}{Observaci\'on}[section]
+%\newtheorem*{obs}{Observaci\'on}
+\newtheorem{nota}{Nota}[section]
+
+
+\renewcommand{\abstractname}{Resumen}
+\renewcommand{\partname }{Parte }
+\renewcommand{\indexname}{Indice }
+\renewcommand{\figurename }{Figura }
+\renewcommand{\tablename }{Tabla }
+\renewcommand{\proofname}{Demostraci\'on}
+\renewcommand{\appendixname }{Ap\'endice }
+\renewcommand{\contentsname }{Contenidos }
+\addto\captionsspanish{\renewcommand{\chaptername }{Lectura }}
+\renewcommand{\bibname }{Bibliografía }
+\renewcommand*{\thefootnote}{\arabic{footnote}}
+
+\tolerance=10000
+\renewcommand{\baselinestretch}{1.3}
+\newcommand{\ben}{\begin{enumerate}}
+\newcommand{\een}{\end{enumerate}}
+\newcommand{\dis}{\displaystyle}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\N}{\mathbb N}
+
+\oddsidemargin -0.2cm \evensidemargin -.3cm \topmargin -1.5cm \textheight 24.5cm
+\textwidth 17.2cm
+
+\newenvironment{sol}{{\underline{\emph{Solución:}}}}{\hfill\rule{2mm}{2mm}}
+
+\DeclareGraphicsExtensions{.eps,.bmp,.wmf}
+
+
+%\makeatletter
+%\def\specialsection{\@startsection{section}{1}%
+%  \z@{\linespacing\@plus\linespacing}{.5\linespacing}%
+%  {\normalfont\centering}}% DELETED
+%  {\normalfont}}% NEW
+%\def\section{\@startsection{section}{1}%
+%  \z@{.7\linespacing\@plus\linespacing}{.5\linespacing}%
+%  {\normalfont\scshape\centering}}% DELETED
+%  {\normalfont\scshape}}% NEW
+%\makeatother
+
+\begin{document}
+\sloppy
+
+\thispagestyle{empty}
+
+\begin{figure}[H]
+\pagenumbering{gobble}
+\thispagestyle{empty}
+\centering
+\includegraphics[height=\textheight, width=\textwidth, keepaspectratio=true]{caratula.png}
+\end{figure}
+
+\pagenumbering{arabic}
+\setcounter{page}{0}
+%%%%%%%%%%%% AQUI COMIENZA LA PÁGINA DE PRESENTACION %%%%%%%%%%%%%%%%
+
+%\thispagestyle{empty}
+
+%\begin{comment}
+
+%%%%%%%%%%%% Esto define los headers %%%%%%%%%%%%%%%%
+
+\pagestyle{fancy}
+\fancyhead{} % clear all header fields
+\fancyhead[L]{%right
+   \includegraphics[height=0.25in]{Logo_Inidep.pdf}
+}
+\fontsize{8pt}{8pt}\selectfont
+%\fancyfoot{}
+\chead{INSTITUTO NACIONAL DE INVESTIGACIÓN Y DESARROLLO PESQUERO}
+\cfoot{\tiny{IMPLEMENTACIÓN DEL ANÁLISIS DE RIESGO BIOLÓGICO PARA MODELOS ESTRUCTURADOS}}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt} % grosor de la línea de la cabecera
+\addtolength{\headheight}{5mm}       % espacio para la raya en la cabecera
+\renewcommand{\footrulewidth}{0.4pt} % grosor de la línea del pie
+\addtolength{\footskip}{10mm}        % espacio para la raya del pie
+%%%%%%%%%%
+
+
+%%%%%%%%%%%% AQUI TERMINA LA PÁGINA DE PRESENTACION %%%%%%%%%%%%%%%%
+
+
+
+%\maketitle
+\fontsize{14pt}{14pt}\selectfont
+\hskip 3cm
+\begin{center}
+\large{IMPLEMENTACIÓN DEL ANÁLISIS DE RIESGO BIOLÓGICO PARA MODELOS ESTRUCTURADOS} \\ \ \\
+\fontsize{12pt}{12pt}\selectfont
+
+\small{Alfredo H. Gonzalez \\ Gabinete de Biomatemática. Instituto Nacional de Investigación y Desarrollo Pesquero (INIDEP), Paseo Victoria Ocampo N° 1  Escollera Norte, B7602HSA - Mar del Plata, Argentina.} \\ \tiny{E-mail: agonzalez@inidep.edu.ar }
+\end{center}
+%\vspace{0.5cm}
+\fontsize{11pt}{11pt}\selectfont
+
+\vspace{0.8cm}
+\section*{\textbf{Introducción}}
+Tradicionalmente el Gabinete de Biomatemática colabora con diferentes Programas y Gabinetes de Investigación del INIDEP, principalmente en temas de Evaluación de Recursos Pesqueros. La colaboración se ve reflejada, entre otras actividades, en la planificación y realización de proyectos de investigación propios tendientes a mejorar las metodologías aplicadas en las evaluaciones de los recursos.  
+
+Actualmente en el Instituto la mayoría de los Programas emplea modelos estructurados por edades, para describir y predecir el impacto de la explotación en la población de peces bajo estudio (la estimación de abundancia, los estudios asociados al riesgo biológico y la recomendación de una captura máxima biologicamente aceptable para cada año son algunos ejemplos). La sobre-parametrización, inconsistencias y una inapropiada implementación del modelo son factores determinantes al momento de querer concretar lo que se desee y lograr estimaciones confiables (Aubone, 2012). 
+
+\section*{\small{\textbf{Modelo y metodología para la Proyección}}} \hfill 
+
+Se desarrolló el programa FISH-GURU+ en el cual se implementa un Análisis de Riesgo teniendo como Punto Biológico de Referencia (PBR) a la Biomasa Desovante Virgen. El objetivo central de este trabajo es presentar la metodología, los detalles de la implementación y las instrucciones de uso.   
+Se pretende que este programa constituya una herramienta de apoyo para los investigadores que trabajen en evaluación de recursos pesqueros.
+
+El programa que se desarrolló toma como entrada los datos de salida de un Análisis de Cohorte (AC), de modo que los mismos también pueden obtenerse de otros modelos estructurados por edades como el Análisis de Poblaciones Virtuales (APV), Análisis de Cohortes Modificado (ACM), Age Structured Production Model (ASPM), por dar algunos ejemplos.  
+Se utiliza un modelo suficientemente general como para contemplar todos los casos citados previamente, a los fines de proyectar una determinada cantidad de años hacia adelante, evaluando riesgos con diferentes medidas de manejo.
+Para ello, además de los datos provenientes del modelo de dinámica se le incorporan:
+\begin{itemize}
+\item Número de años a proyectar hacia el futuro.
+\vspace{0.1cm}
+
+\item El PBR considerado ha sido la relación de la Biomasa Desovante en cada tiempo respecto de la Biomasa Desovante Virgen, esto es: se pregunta si $SB < r * SBV$ donde $r$ representa la proporción de Biomasa Desovante Virgen con el que se compara la Biomasa Desovante de cada tiempo. Se puede incluir un vector $\mathbf{r} = (r_1,\ldots,r_n)$ para poder realizar comparaciones con distintas proporciones.
+\vspace{0.1cm}
+\end{itemize}
+
+\subsection*{\small{\textbf{Proyección}}} \hfill \vskip 0.3cm
+
+Se considera para la proyección el modelo
+
+$$N_{i+1,t+1} = N_{i,t} p_{i} \, ,\qquad i=1 \dots k-2$$ 
+$$N_{k+,t+1} = N_{k-1,t}p_{k-1} + N_{k+,t} p_{k+}$$
+
+\noindent donde $t=t_m,\dots,t_m+Tmax$ con $t_m$ el tiempo a partir del cual se proyecta y $Tmax$ es el número de tiempos proyectados y donde además la captura se expresa como
+
+$$C_{i,t} = \gamma_i(\lambda) \left(1-p_i\right) N_{i,t} \qquad i=1 \dots k+$$
+
+\noindent donde $p_i=p_i(\lambda)$ es la probabilidad de supervivencia de los individuos de la edad $i$ que se mantiene constante en el tiempo y $\gamma_i=\gamma_i(\lambda)$ es la \emph{intensidad de pesca} como está definida en \cite{modelos}. En el caso particular de esta implementación del FishGuru+ donde se cuenta con resultados del Análisis de Cohortes Modificado \cite{acm} se tiene que 
+
+$$ \gamma_i(\lambda) = \frac{\lambda F_i}{\lambda F_i + M_i }$$
+$$p_i(\lambda) = exp(-\lambda F_i-M_i)$$
+
+\noindent y se puede escoger además entre la función de reclutamiento de Beverton \& Holt, la de Ricker \cite{panik} o bien una constante, \emph{i.e.}
+\begin{align*}
+N_1 & = \frac{\alpha \,SB}{\beta + SB}        &    &\textit{\tiny{Función de Beverton \& Holt}} \\
+N_1 & = \alpha \, SB \, exp(-\beta \, SB)     &    &\textit{\tiny{Función de Ricker}}  \\
+N_1 & = \mathrm{C}                            &    &\textit{\tiny{Función constante}}
+\end{align*}
+%$$N_1 = \frac{\alpha \,SB}{\beta + SB} \quad\quad \textit{\tiny{Función de Beverton \& Holt}}$$
+%$$N_1 = \alpha \, SB \, exp(-\beta \, SB) \quad\quad \textit{\tiny{Función de Ricker}}$$
+%$$N_1 = \mathrm{C} \quad\quad \textit{\tiny{Función constante}}$$
+
+\noindent donde el valor de $\lambda$ es la \emph{escala de intensidad pesquera} que se utiliza para calcular la intensidad de pesca al asumir valores constantes para la mortalidad natural y la mortalidad natural por pesca, en donde $\lambda$ afecta a esta última; en un planteamiento más genérico, si se consideran valores de $p_i$ que no provengan de una ecuación determinada, el valor de $\lambda$ no se utiliza. Con todo esto y un número $NSIM$ de simulaciones se procede a realizar la proyección para la evaluación de riesgo.
+
+
+En el caso de esta implementación se requieren $NSIM$ simulaciones del vector $F_{(t_m)}=\left(F_{1,t_{m}},\dots,F_{k+,t_{m}}\right)$ o bien $NSIM$ simulaciones del vector $\left(p_1,\dots,p_{k+}\right)$ ambos elementos de $\mathbb{R}^{k}$. Con estos valores y la función de reclutamiento elegida se realiza el cálculo del vector de estado $N_{t_{m}+j}$ con $j=1,\dots,Tmax$ teniendo en cuenta que $SB_{t} = \sum_{i=1,k+} \mathrm{mw}_{i,t} \mathrm{matur}_{i,t} N_{i,t}$. Finalmente, en este caso se calcula el riesgo $R = \left(\rho_{t_m},\dots,\rho_{t_m+Tmax}\right)$ como el cociente $$\rho_t = \frac{\mathrm{card}\lbrace SB_{t,j} \vert SB_{t,j} < r * SBV , j=1,\dots,NSIM \rbrace}{NSIM} \quad t = t_m,\dots,t_{m}+Tmax$$
+
+\noindent Nótese que $\rho_t$ puede definirse de manera alternativa como sea conveniente dependiendo del PBR que se utilice para realizar el análisis de riesgo.
+
+\subsection*{\small{\textbf{Utilización del software}}} \hfill \vskip 0.3cm
+
+El software desarrollado se programó en el lenguaje \textit{MATLAB} y debe ejecutarse desde el módulo \textit{Principal.m}. Los archivos necesarios para su ejecución deben estar en formato CSV (Comma Separated Values) en la carpeta donde se encuentran los scripts que componen el programa, que se encuentran detallados en el Cuadro \ref{tabla:archivos}.
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|c|l|}
+\hline
+Nombre del archivo & Contenido \\
+\hline \hline
+Ntm.csv & Matriz de $NSIM$ réplicas del vector estado del último tiempo\\ \hline
+DatosSB.csv & Pesos medios y proporción de hembras maduras por edad\\ \hline
+SR.csv & Datos de reclutamiento \\ \hline
+SBV.csv & Datos de biomasa desovante virgen\\ \hline
+pdelta.csv & Datos de probabilidad de supervivencia\\ \hline 
+Tiempos-r.csv & Número de tiempos a proyectar y niveles de riesgo\\ \hline
+\end{tabular}
+\caption{Archivos necesarios para la ejecución de FishGuru+}
+\label{tabla:archivos}
+\end{center}
+\end{table}
+
+\noindent Es imperativo que los datos se dispongan de la siguiente manera:
+
+\begin{itemize}
+
+\item \textbf{Ntm.csv}: Las dos primeras líneas del archivo son descriptivas. En la tercer línea se encuentran, separados por comas el número de edades y la cantidad de simulaciones deseadas. La cuarta fila contiene la primer simulación del vector $Ntm$. Esto se repite en las filas sucesivas.
+\begin{center}
+\includegraphics[scale=0.5]{Ntm.png}
+\end{center}
+
+\item \textbf{DatosSB.csv}: Las dos primeras líneas del archivo son descriptivas. En la tercer línea se encuentran, separados por comas el número de edades y la cantidad de simulaciones deseadas. La cuarta fila contiene la primer simulación del vector de pesos medios seguida del vector de proporción de hembras maduras por edad. Esto se repite en las filas sucesivas.
+\begin{center}
+\includegraphics[scale=0.5]{DatosSB.png}
+\end{center}
+
+\item \textbf{Fs.csv}: Las dos primeras líneas del archivo son descriptivas. En la tercer línea se encuentran, separados por comas el número de edades y la cantidad de simulaciones deseadas. La cuarta fila contiene la primer simulación del vector de tasas instantáneas de mortalidad por pesca. Esto se repite en las filas sucesivas.
+\begin{center}
+\includegraphics[scale=0.5]{Fs.png}
+\end{center}
+
+\item \textbf{Ms.csv}: Es exacatamente la misma disposición que para el archivo \emph{Fs.csv}
+
+\item \textbf{SBV.csv}: Las dos primeras líneas del archivo son descriptivas. En la tercer línea se encuentran, separados por comas:
+\begin{itemize}
+\item el denominado ``bit'': un $1$ si se posee datos de la biomasa desovante virgen o cualquier otro valor si no se tiene y se quiere generar y;
+\item la cantidad de simulaciones deseadas. 
+\end{itemize} 
+Si se tiene un valor para la biomasa desovante virgen, éste se coloca en la cuarta fila y se coloca además un cero como se puede apreciar en la imágen. Si no se posee dicho valor y el ``bit'' es distinto de $1$ se ingresa separados por comas en la cuarta fila el número de edades y la cantidad de simulaciones que se desean para simular los valores de biomasa desovante virgen. En este último caso desde la fila 5 hasta el final deberá colocar consecutivamente:
+\begin{itemize}
+\item $k$ columnas de Pesos medios de hembras maduras por edad en estado virgen.
+\item $k$ columnas de Proporción de hembras maduras por edad en estado virgen.
+\item $k$ columnas de Probabilidad de supervivencia por edad en estado virgen. 
+\end{itemize}
+
+\begin{center}
+\includegraphics[scale=0.7]{SBV.png}
+\end{center}
+
+\item \textbf{SR.csv}: Las dos primeras líneas del archivo son descriptivas. En la tercer línea se encuentran, separados por comas el número de edades y la cantidad de simulaciones deseadas. En la cuarta línea se tiene:
+\begin{itemize}
+\item un ``bit'' igual a $1$ si se considera una función de reclutamiento de Beverton \& Holt y habrá en las NSIM filas subsiguientes separados por coma valores de $\alpha$ y $\beta$
+\item un ``bit'' igual a $2$ si se considera una función de reclutamiento de Ricker y habrá en las NSIM filas subsiguientes separados por coma valores de $\alpha$ y $\beta$
+\item un ``bit'' igual a $3$ si se considera una función de reclutamiento constante y habrá en las NSIM filas subsiguientes separados por coma valores repetidos del reclutamiento constante elegido.
+\end{itemize}
+
+\begin{center}
+\includegraphics[scale=0.5]{SR.png}
+\end{center}
+
+\item \textbf{Tiempos-r.csv}: Las dos primeras líneas del archivo son descriptivas. En la tercer línea se encuentran, separados por comas el número de tiempos a proyectar y la cantidad de valores a considerar para la proporción de biomasa desovante actual respecto de la virgen. La cuarta fila es descriptiva y la quinta contiene, separado por comas, las proporciones a considerar cuya cantidad quedó descrita en la tercer línea (en el caso de la imágen esa cantidad es igual a $3$)
+\begin{center}
+\includegraphics[scale=0.5]{Tiempos-r.png}
+\end{center}
+\end{itemize}
+
+Finalizada la ejecución el programa emitirá una serie de gráficos que mostrarán el riesgo en función del tiempo. Para cada combinación de los valores de $\lambda$ y $r$ se obtendrá un gráfico como el de la Figura \ref{fig:risk}.
+
+\begin{figure}[h]
+\includegraphics[scale=0.7]{riesgo.png}
+\caption{Gráfico de riesgo emitido por FishGuru+}\label{fig:risk}
+\end{figure}
+
+\newpage
+\subsection*{\small{\textbf{APENDICE: Scripts en \textit{MATLAB}}}} \hfill \vskip 0.3cm
+\noindent \small{\textbf{Principal.m}}
+\tiny{
+\begin{lstlisting}[language=MATLAB]
+% Archivos de entrada de datos:
+
+% 'SR.csv' (Stock/Recluta)
+% 1ª línea: Descripción del contenido del archivo
+% 2ª línea: Descripcion de los datos:
+% 3ª línea: bit de identificación de la función de Reclutamiento, Nº de simulaciones
+% 4ª línea en adelante:
+% i) Si bit = 1 (B&H) habrá: En col 1, NSIM réplicas de alfa y en col 2
+% NSIM réplicas de beta.
+% ii) Si bit = 2 (Ricker) habrá: En col 1, NSIM réplicas de alfa y en col 2
+% NSIM réplicas de beta.
+% iii) Si bit =3 (cte) habrá: En col 1, NSIM réplicas del reclutamiento y 
+% en col 2 nuevamente NSIM réplicas del reclutamiento (para mantener el
+% formato del archivo igual a las opciones anteriores)
+
+% Todos los demas archivos de entrada de datos poseen el siguiente formato:
+% 1ª línea: Descripción del contenido del archivo
+% 2ª fila 1ª columna estará el número 'k' de edades consideradas 
+% 2ª fila 2ª col estará 'NSIM': número de simulaciones a leer de cada concepto
+% si del archivo se extraen 'm' vectores de datos replicados 'N' veces,
+% deberán guardarse los 'm' vectores 'N x k' uno a continuación del otro.
+
+% 'Ntm.csv' 
+% Contiene: NSIM simulaciones de Ntm: vector estado poblacional del último tiempo
+
+% 'madurez.csv'
+% Contiene:
+% wm: vector (col) pesos medios de hembras maduras por edad del tiempo tm
+% matm: proporción de hembras maduras por edad del tiempo tm
+
+% 'SBV.csv'
+% 1ª fila: Descripcion del archivo
+% 2ª fila: Descripcion de los datos:
+% 3ª fila: Bit de identificación: 
+% 1 si posee el valor de Biomasa Desovante en estado Virgen o 0 si no lo posee
+% Si en (3,1) hay un 1, en (4,1) deberá aparecer el peso en toneladas de la SBV
+% Si en (3,1) hay un 0, poner en (4,1) nº de edades y en (4,2) nº simulac.
+% Así, desde la fila 5 hasta el final deberá colocar consecutivamente:
+% k columnas de Pesos medios de hembras maduras por edad en estado virgen.
+% k columnas de Proporción de hembras maduras por edad en estado virgen.
+% k columnas de Probabilidad de supervivencia por edad en estado virgen.
+
+
+%% Vector estado del último tiempo:
+k = csvread('Ntm.csv',2,0,[2 0 2 0]); % En fila 3 col 1 está el nro de edades
+NSIM = csvread('Ntm.csv',2,1,[2 1 2 1]); % En (3,2) está el nro de réplicas de los datos;
+Ntm = csvread('Ntm.csv',3,0,[3 0 3+NSIM-1 k-1]) % lee desde (4,1) hasta (3+NSIM,k). 
+%  Datos para calcular la Biomasa Desovante:
+wm = csvread('DatosSB.csv',3,0,[3 0 3+NSIM-1 k-1]); % desde (4,1) lee pesos medios de hemb maduras x edad
+matm = csvread('DatosSB.csv',3,k,[3 k 3+NSIM-1 2*k-1]); % desde (4,k+1) lee prop de hemb maduras x edad
+
+% Datos y parámetros de la Función de Reclutamiento:
+bit = csvread('SR.csv',2,0,[2 0 2 0]); % Dígito identificador del tipo de func. de reclutam.
+%
+a = csvread('SR.csv',3,0,[3 0 NSIM+2 0]);
+b = csvread('SR.csv',3,1,[3 1 NSIM+2 1]);
+
+%% Tasas instantáneas de mortalidad por pesca por edad del último tiempo tm
+Ftm = csvread('Fs.csv',3,0,[3 0 NSIM+2 k-1]);
+
+% Tasas instantáneas de mortalidad natural por edad del último tiempo tm
+Mtm = csvread('Ms.csv',3,0,[3 0 NSIM+2 k-1]);
+
+%%
+lambda = 0.3:0.1:1.3;
+% Probabilidad de supervivencia por edad del último tiempo tm (varían con lambda)
+ptm = zeros(NSIM,k,length(lambda));
+gama = zeros(NSIM,k,length(lambda));
+for s = 1:length(lambda)
+    ptm(:,:,s) = exp(-lambda(s)*Ftm-Mtm);    % exponencial de las entradas de la matriz
+    gama(:,:,s) = (lambda(s)*Ftm)./(lambda(s)*Ftm+Mtm);
+end
+
+%% Archivo con el valor de SBV o los datos para calcularla:
+bitSBV = csvread('SBV.csv',2,0,[2 0 2 0]); % 1 si conoce valor de SBV, 0 caso contrario
+
+if bitSBV == 1
+    BDV = csvread('SBV.csv',3,0,[3 0 3 0]);% 3,0 indica que lee desde fila 4, col 1
+    unos = ones(NSIM,1);
+    BDV = BDV.*unos;         % de este modo replico NSIM veces la BDV.
+else
+    % Pesos medios de hembras maduras por edad en estado virgen:    
+    % Primeras k columnas de pesos medios
+    % wmv = csvread(filename,3,0,[3 0 NSIM+2 k-2]); 
+    wmv = 1.2*wm;
+    % Proporción de hembras maduras por edad en estado virgen:
+    % sigtes k col: prop de hembras mad.
+    matv = csvread('SBV.csv',3,k,[3 k 3+NSIM-1 2*k-1]); 
+    % Probabilidad de supervivencia por edad en estado virgen:
+    % pM = csvread(filename,3,2*(k-1),[3 2*(k-1) NSIM+2 3*(k-1)-1]); % "pM=exp(-M)"
+    pM = exp(-Mtm);
+    % Pesos medios poblacionales en estado virgen:
+    % w = csvread(filename,3,2*(k-1),[3 2*(k-1) NSIM+2 4*(k-1)-1]);
+    w = wmv;
+    VE = zeros(size(pM));        % Vector Estructura Poblacional
+    BDV = zeros(size(pM(:,1)));  % Biomasa Desovante Virgen
+    apM = zeros(size(pM(:,1)));  % Su dimensión es NSIM x 1
+    N1v = zeros(size(pM(:,1)));  % 1ª componente del vector estructura virgen
+    Nv = zeros(size(pM(:,1)));   % Número total de individuos en el estado virgen
+    BV = zeros(size(pM(:,1)));   % Biomasa total en el estado virgen
+    for J=1:length(pM(:,1))      % Hace esto NSIM veces
+        VE(J,:) = VecEstrV(pM(J,:));   % Vector Estructura Poblacional Virgen
+        apM(J) = VE(J,1)/sum(wmv(J,:).*matv(J,:).*VE(J,:));
+        BDV(J) = SBV(a(J),b(J),apM(J),bit);  % Calcula la biomasa desovante virgen
+        N1v(J) = apM(J).* BDV(J);
+        Nv(J) = N1v(J)./ VE(J,1);
+        BV(J) = Nv(J).*sum(w(J,:).*VE(J,:));
+    end
+end    
+%% Cantidad de tiempos a proyectar y fracción de la biomasa desovante virgen
+Tmax = csvread('Tiempos-r.csv',2,0,[2 0 2 0]); % En (3,1) está el nro de tiempos a proyectar
+dim = csvread('Tiempos-r.csv',2,1,[2 1 2 1]);  % dimension del vector de r's
+r = csvread('Tiempos-r.csv',4,0,[4 0 4 dim-1]); % inicializo vector de r's
+%%
+st = 'Análisis de Riesgo' 
+
+R = zeros(dim,Tmax,length(lambda));      % Matriz de Riesgos
+
+for s = 1:length(lambda)
+    for m = 1:dim
+        N = zeros(NSIM,k,Tmax+1);
+        C = zeros(NSIM,k,Tmax);
+        N(:,:,1) = Ntm;           % Comenzamos a proyectar con las NSIM réplicas de Ntm
+        BD = zeros(NSIM,Tmax);
+        for t = 1:Tmax
+            CONT = 0;
+            for j=1:NSIM
+                BD(j,t) = SB(N(j,:,t),wm(j,:),matm(j,:));
+                if BD(j,t) < (r(m)*BDV(j))
+                    CONT = CONT + 1;
+                end
+                N(j,:,t+1) = Proyecta(N(j,:,t),ptm(j,:,s),bit,a(j),b(j),BD(j,t));
+                C(j,:,t) = gama(j,:,s).*(ones(size(ptm(j,:,s)))-ptm(j,:,s)).*N(j,:,t+1);
+            end
+            R(m,t,s) = CONT/NSIM;
+        end
+        figure(gcf);
+        figure((s-1)*dim+m); % Hace un gráfico para cada lambda y cada r
+        hold on;
+        xlabel('Tiempos Proyectados(años)');
+        ylabel('Riesgo');
+        st1 = num2str(lambda(s));
+        st2 = num2str(r(m));
+        title({st;strcat('\it{\lambda = }',st1,' y ',' \it{r = }',st2)});
+        plot(R(m,:,s),'r');
+    end
+end
+\end{lstlisting}
+}
+
+\noindent \small{\textbf{Proyecta.m}}
+\tiny{
+\begin{lstlisting}[language=MATLAB]
+function N = Proyecta(Ntm,p,bit,a,b,SBtm)
+% Ntm: vector de estado del último tiempo tm
+% ptm: p's del último tiempo
+% SBtm: Biomasa desovante del último tiempo.
+
+% N = zeros(NSIM,k,Tmax+1);     % N = zeros(Tmax+1,k,NSIM);
+
+k = length(Ntm);    % Lee la cantidad de edades de la especie
+
+N = zeros(1,k);        % Inicializo la matriz de N's
+for i=1:(k-2)
+    N((i+1)) = p(i)*Ntm(i);
+end
+N(k)=p(k-1)*Ntm(k-1)+p(k)*Ntm(k);
+switch bit
+    case 1    % Beverton & Holt
+        N(1) = (a*SBtm)/(b+SBtm);
+    case 2    % Ricker
+        N(1) = (a*SBtm)*exp(-b*SBtm);
+    case 3    % Reclutamiento constante
+        N(1) = a;
+end    
+end
+\end{lstlisting}
+}
+
+\noindent \small{\textbf{SB.m}}
+\tiny{
+\begin{lstlisting}[language=MATLAB]
+function A = SB(Ntm,wm,matm)
+% Calcula la Biomasa Desovante
+% Datos:
+% Ntm: vector (fila) de estado del último tiempo tm
+% wm: vector (fila) pesos medios de hembras maduras por edad
+% matm: proporción de hembras maduras por edad
+    A = sum(wm.*matm.*Ntm);
+end
+\end{lstlisting}
+}
+
+\section{Agradecimientos}
+
+Agradezco muchísimo a mi compañero Juan M. Verón, quien me brindó su inestimable ayuda en la redacción y la presentación de este informe.
+
+\newpage
+\bibliography{RefBibTex}{}
+\bibliographystyle{apalike2}
+\end{document}
+

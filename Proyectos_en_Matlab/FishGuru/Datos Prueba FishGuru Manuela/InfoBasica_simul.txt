@@ -1,0 +1,13 @@
+!---------------------------------------------------
+!Proyecto FISH-GURU+                          
+!Modelo AC (Analisis de Cohortes)                   
+!Estimacion de parametros por maxima verosimilitud  
+!---------------------------------------------------
+!                                                   
+!Texto de identificacion de los datos   
+!
+1000 !Numero de simulaciones
+7    !Numero de edades
+1998 !Anio inicial Periodo Diagnostico
+2007 !Anio final Periodo Diagnostico
+    

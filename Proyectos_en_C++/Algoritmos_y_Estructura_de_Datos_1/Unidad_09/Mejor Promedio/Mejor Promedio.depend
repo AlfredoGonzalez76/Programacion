@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1603138043 source:c:\dropbox\catedras\isft151\isft n151 sistemas\algoritmos y estructuras de datos i\ayedi - 2020\unidad 9 punteros y memoria dinámica\mejor promedio\main.cpp
+	<iostream>
+	<conio.h>
+	<stdio.h>
+
